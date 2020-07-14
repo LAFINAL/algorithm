@@ -1,11 +1,5 @@
-package main
+package leetcode
 
-import "fmt"
-
-func main() {
-	answer := isValid("{[]}")
-	fmt.Println(answer)
-}
 
 func isValid(s string) bool {
 

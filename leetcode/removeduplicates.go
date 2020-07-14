@@ -1,12 +1,5 @@
-package main
+package leetcode
 
-import "fmt"
-
-func main() {
-	a := []int{1,1,2}
-	answer := removeDuplicates(a)
-	fmt.Println(answer)
-}
 
 func removeDuplicates(nums []int) int {
 

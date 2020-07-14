@@ -1,16 +1,11 @@
-package main
+package leetcode
 
 import (
-	"fmt"
 	"math"
 	"strconv"
 	"strings"
 )
 
-func main() {
-	answer:=myAtoi("-91283472332")
-	fmt.Println(answer)
-}
 
 func myAtoi(str string) int {
 

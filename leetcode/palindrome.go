@@ -1,16 +1,6 @@
-package main
+package leetcode
 
-import (
-	"fmt"
-	"strconv"
-)
-
-func main(){
-	 answer := isPalindrome(10)
-	 answer2 := isPalindromeWithString(10)
-	 fmt.Println(answer)
-	 fmt.Println(answer2)
-}
+import "strconv"
 
 func isPalindrome(x int) bool {
 

@@ -1,18 +1,6 @@
-package main
+package leetcode
 
-import "fmt"
 
-func main(){
-
-	answer := convert("AB", 1)
-
-	if answer == "PAHNAPLSIIGYIR" {
-		fmt.Println(answer)
-	} else {
-		fmt.Println(answer)
-		fmt.Println("PAHNAPLSIIGYIR")
-	}
-}
 
 func convert(s string, numRows int) string {
 	a := make([]byte, 0, 0)

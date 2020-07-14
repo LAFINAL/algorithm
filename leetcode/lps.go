@@ -1,14 +1,8 @@
-package main
+package leetcode
 
 import "fmt"
 
-func main(){
-	//answer := longestPalindrome("babad")
-	answer2 := longestPalindromeWithDP("cabba")
-	fmt.Println(answer2)
-}
-
-func longestPalindromeWithDP(s string) string {
+func longestPalindromeWithDP(s string) {
 	a := make([][]bool, len(s), len(s))
 	for i:=0; i<len(a); i++ {
 		a[i] = make([]bool, len(s), len(s))
@@ -25,22 +19,6 @@ func longestPalindromeWithDP(s string) string {
 			a[i][i+1] = true
 		}
 	}
-
-	// length > 2
-	length := 3
-	for length:=3; length<len(s); length++ {
-		for i:=0; i<len(s)-length+1; i++ {
-			if
-		}
-	}
-
-	for i:=0; i<len(s); i++ {
-		for j:=0; j<len(s); j++ {
-			fmt.Print(a[i][j])
-		}
-		fmt.Println()
-	}
-	return "test"
 }
 
 func longestPalindrome(s string) string {

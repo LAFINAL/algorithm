@@ -13,15 +13,6 @@ type Computer struct {
 	Graphic string
 }
 
-func main(){
-	http.HandleFunc("/cacheTest", TestCache)
-	http.HandleFunc("/ajaxTest", AjaxTest)
-	http.HandleFunc("/redirectTest", RedirectTest)
-	err := http.ListenAndServe(":8080", nil)
-	if err != nil {
-		log.Fatal("ListendAndServe: ", err)
-	}
-}
 
 func TestCache(w http.ResponseWriter, r *http.Request){
 	a := "test"

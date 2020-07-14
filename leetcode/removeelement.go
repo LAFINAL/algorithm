@@ -1,12 +1,6 @@
-package main
+package leetcode
 
 import "fmt"
-
-func main(){
-	a := []int{3,2,2,3}
-	answer := removeElement(a, 3)
-	fmt.Println(answer)
-}
 
 func removeElement(nums []int, val int) int {
 
