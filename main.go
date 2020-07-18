@@ -1,13 +1,8 @@
 package main
 
-import (
-	"algorithm/leetcode"
-	"fmt"
-)
+import "algorithm/leetcode"
 
 func main(){
-	testCase := []int{3, 2, 4}
-	target := 6
-	answer := leetcode.TwoSum(testCase, target)
-	fmt.Println(answer)
+	a := []int{1,1,2,2,3}
+	leetcode.SingleNumber(a)
 }
