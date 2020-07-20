@@ -1,16 +1,15 @@
 package leetcode
 
-
 func isValid(s string) bool {
 
-	stack := make([]byte, 0, 0)
-	pare := make(map[byte]byte)
-	pare[']'] = '['
-	pare['}'] = '{'
-	pare[')'] = '('
+	match := make(map[byte]byte)
+	match[']'] = '['
+	match['}'] = '{'
+	match[')'] = '('
 
+	stack := make([]byte, 0, 0)
 	for i:=0; i<len(s); i++ {
-		if pare[s[i]] == 0 {
+		if match[s[i]] == 0 { // map 안에 없으면.
 			stack = append(stack, s[i])
 		} else {
 			if len(stack) == 0 {
@@ -18,10 +17,10 @@ func isValid(s string) bool {
 			}
 
 			pop := stack[len(stack)-1]
-			stack = stack[:len(stack)-1]
-			if pare[s[i]] != pop {
+			if pop != match[s[i]] {
 				return false
 			}
+			stack = stack[:len(stack)-1]
 		}
 	}
 

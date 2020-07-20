@@ -1,18 +1,14 @@
 package leetcode
-
-func reverseList(head *ListNode) *ListNode {
-
-	if head == nil {
-		return nil
-	}
-
-	next := reverseList(head.Next)
-	if next != nil {
-		var temp int
-		temp = head.Val
-		head.Val = next.Val
-		next.Val = temp
-	}
-
-	return head
-}
+//
+//func reverseList(head *ListNode) *ListNode {
+//
+//	prev := new(ListNode)
+//	curr := head
+//
+//	tempNode := curr.Next
+//
+//
+//	curr.Next = prev // 1의 다음은 null 이잖아.
+//	prev = curr// 1의 이전꺼는 2잖아. 이게 뭔 개소리냐..
+//
+//}
