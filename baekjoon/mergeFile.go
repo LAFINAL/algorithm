@@ -1,0 +1,5 @@
+package baekjoon
+
+func MergeFile() {
+
+}
