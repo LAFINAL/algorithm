@@ -1,38 +1,34 @@
 package leetcode
 
 func LongestPalindrome(s string) string {
-	max := 0
-	answer := ""
-	for i:=0; i<len(s); i++ {
-		left := i-1
-		right := i+1
-		if right < len(s) && s[right] == s[right-1] && left >= 0 && s[left] != s[left+1]{
-			right = right + 1
-		}
 
-		for {
-			prevLength := (right-1) - (left+1) + 1
-			if left < 0 || right > len(s) -1 {
-				if prevLength > max {
-					answer = s[left+1:right]
-					max = prevLength
-				}
-				break
-			}
-
-			if s[left] == s[right] {
-				left = left - 1
-				right = right + 1
-			} else {
-				if prevLength > max {
-					answer = s[left+1 : right]
-					max = prevLength
-				}
-				break
+	for i:=len(s); i>0; i-- {
+		for j:=0; j<len(s)-i+1; j++ {
+			// j부터 +len(s)-1까지지
+			if IsPalindrome(s[j:len(s)]) {
+				return s[j:len(s)]
 			}
 		}
-
 	}
-	return answer
+
+	return ""
 }
 
+func IsPalindrome(s string) bool {
+	r := make([]rune, len(s))
+	for i, v := range s {
+		r[len(s)-i-1] = v
+	}
+	if string(r) == s {
+		return true
+	}
+	return false
+}
+
+// refactor.
+//for i:=0; i<len(s)/2; i++ {
+//if s[i] != s[len(s)-i-1] {
+//return false
+//}
+//}
+//return true
