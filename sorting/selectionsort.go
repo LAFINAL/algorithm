@@ -1,56 +1,23 @@
 package sorting
 
-// selection sort는 sorting 중에 제일 안좋은 거.
-// 시간복잡도는 전부 n2이다.
-// min 값 찾아서 switch
+func SelectionSort(source []int) []int {
 
-func Selection() {
-	a := []int{5,3,13,1,2,3,64,3,1,8,6}
+	// selection sort는 추가 공간 사용이 없다.
+	// selection sort는 min 값을 찾아서 맨 앞에서 부터 쓰는 것이다. min의 위치도 알아야겠네? -> min의 위치'만' 알면된다.
+	// for loop 안에서 minIndex 생성과 소멸이 반복되는건가?
+	// 일단 for문 자체도 중괄호, 함수고 for문 돌때 반복 한 번마다 전부 초기화 된다.
+	// 그리고 반복문에 쓰이는 변수는 무조건 그 안쪽에서 쓰길 바란다. 성능도 그렇게 좋지 않다고 나옴.
+	// for문 scope안에서만 쓰는 변수라는게 더 중요함.
 
-	//for i:=0; i<len(a)-1; i++ {
-	//	min := i
-	//	for j:=i+1; j<len(a); j++ {
-	//		if a[min] > a[j] {
-	//			min = j
-	//		}
-	//	}
-	//
-	//	if min != i { // min이 i랑 같지 않으면 swap
-	//		temp := a[i]
-	//		a[i] = a[min]
-	//		a[min] = temp
-	//	}
-	//}
-	//fmt.Println(a)
-
-	// selection sort는 bubble sort에 비해서 swap이 적다. 그래서 시간 복잡도는 똑같은데 더 효율적. min 값으로 앞에서부터.
-	//for i:=0; i<len(a)-1; i++ {
-	//	min := i
-	//	for j:=i+1; j<len(a); j++ {
-	//		if a[j] < a[min] {
-	//			min = j
-	//		}
-	//	}
-	//	if min != i {
-	//		temp := a[min]
-	//		a[min] = a[i]
-	//		a[i] = temp
-	//	}
-	//}
-	//fmt.Println("Selection sort: ", a)
-
-	// selection sort는 min 값을 찾는 것. min 값을 찾아서 맨 앞에 쓰는 것.
-	for i:=0; i<len(a)-1; i++ {
-		min := i
-		for j:=i+1; j<len(a); j++ {
-			if a[j] < a[min] {
-				min = j
+	for i:=0; i<len(source)-1; i++ {
+		minIndex := i
+		for j:=i+1; j<len(source); j++ {
+			if source[j] < source[minIndex] {
+				minIndex = j
 			}
 		}
-		if min != i {
-			temp := a[min]
-			a[min] = a[i]
-			a[i] = temp
-		}
+		source[i], source[minIndex] = source[minIndex], source[i]
 	}
+
+	return source
 }
