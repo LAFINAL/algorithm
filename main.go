@@ -2,6 +2,7 @@ package main
 
 import "fmt"
 
+// annotation for test
 func main(){
 	a := 1.0
 	n := 3.0
