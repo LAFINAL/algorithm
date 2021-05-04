@@ -7,6 +7,7 @@ func main(){
 	n := 3.0
 	// change annotation location
 
+	// feature 3
 	for i:=0; i<5; i++ {
 		b := a/n
 		fmt.Println(b)
