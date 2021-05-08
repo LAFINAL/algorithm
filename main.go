@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main(){
+func main() {
 	a := 1.0
 	n := 3.0
 	// change annotation location
@@ -16,3 +16,4 @@ func main(){
 	}
 }
 // annotation for pr test
+// pr test
